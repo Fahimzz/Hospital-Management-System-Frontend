@@ -7,7 +7,7 @@ app.controller("login",function($scope,ajax,$location){
        var u= resp.data;
         var user = u.Username;
         var username;
-        
+
       /*  function setCookie(username) {
         debugger;
     document.cookie = username + "="  + ";path=/";
@@ -34,7 +34,10 @@ app.controller("login",function($scope,ajax,$location){
          }
          if(u.Type=="Patient")
          {
-           $location.path("/doctorlist");
+           sessionStorage.setItem("Username",user);
+           alert(sessionStorage.getItem("Username"));
+           debugger;
+           $location.path("/editPatientProfile");
          }
          if(u.Type=="Receptionist")
          {

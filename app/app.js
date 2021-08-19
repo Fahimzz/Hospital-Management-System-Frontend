@@ -4,7 +4,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
     $routeProvider
     .when("/", {
         templateUrl : "views/pages/index.html",
-      
+
     })
     .when("/doctorlist", {
         templateUrl : "views/pages/doctor-list.html",
@@ -45,6 +45,10 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
     .when("/editProfile", {
         templateUrl : "views/pages/profile.html",
         controller: 'editProfile'
+    })
+    .when("/editPatientProfile", {
+        templateUrl : "views/pages/patientProfile.html",
+        controller: 'editPatientProfile'
     })
     .otherwise({
         redirectTo:"/"
