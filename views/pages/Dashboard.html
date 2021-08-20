@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/doctor-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:51 GMT -->
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:20 GMT -->
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Doccure - Doctor List Page</title>
+        <title>Doccure - Dashboard</title>
 
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="content/img/favicon.png">
@@ -19,8 +19,7 @@
 		<!-- Feathericon CSS -->
         <link rel="stylesheet" href="content/css/feathericon.min.css">
 
-		<!-- Datatables CSS -->
-		<link rel="stylesheet" href="content/plugins/datatables/datatables.min.css">
+		<link rel="stylesheet" href="content/plugins/morris/morris.css">
 
 		<!-- Main CSS -->
         <link rel="stylesheet" href="content/css/style.css">
@@ -52,20 +51,17 @@
 
 
 
-				<!-- Mobile Menu Toggle -->
 
+				<!-- Mobile Menu Toggle -->
+				<a class="mobile_btn" id="mobile_btn">
+					<i class="fa fa-bars"></i>
+				</a>
 				<!-- /Mobile Menu Toggle -->
 
 				<!-- Header Right Menu -->
 				<ul class="nav user-menu">
 
-					<!-- Notifications -->
-
-					<!-- /Notifications -->
-
-					<!-- User Menu -->
-					<button type="button" class="btn btn-warning" ng-click="session()">Log Out</button>
-					<!-- /User Menu -->
+	             <button type="button" class="btn btn-warning" ng-click="session()">Log Out</button>
 
 				</ul>
 				<!-- /Header Right Menu -->
@@ -81,7 +77,7 @@
 							<li class="menu-title">
 								<span>Main</span>
 							</li>
-							<li>
+							<li class="active">
 								<a href="#!dashboard"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
 							<li>
@@ -90,7 +86,7 @@
 							<li>
 								<a href="#!appointmentlog"><i class="fe fe-users"></i> <span>Appointment Log</span></a>
 							</li>
-							<li class="active">
+							<li>
 								<a href="#!doctorlist"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
 							</li>
               <li>
@@ -123,77 +119,27 @@
 
 			<!-- Page Wrapper -->
             <div class="page-wrapper">
+
                 <div class="content container-fluid">
 
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row">
 							<div class="col-sm-12">
-								<h3 class="page-title">List of Doctors</h3>
+								<h3 class="page-title">Welcome Admin</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-									<li class="breadcrumb-item"><a href="javascript:(0);">Users</a></li>
-									<li class="breadcrumb-item active">Doctor</li>
+									<li class="breadcrumb-item active">Dashboard</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<!-- /Page Header -->
 
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="card">
-								<div class="card-body">
-									<div class="table-responsive">
-										<table class="datatable table table-hover table-center mb-0">
-											<thead>
-												<tr>
-                          <th>User Name</th>
-													<th>Doctor Name</th>
-													<th>Age</th>
-													<th>Mobile Number</th>
-													<th>Gender</th>
-													<th>Address</th>
-                          <th></th>
-
-												</tr>
-											</thead>
-											<tbody>
-												<tr ng-repeat = "d in doctors">
-                          <td>
-														{{d.Username}}
-													</td>
-													<td>
-														{{d.Dname}}
-													</td>
-													<td>{{d.Age}}</td>
-
-													<td>{{d.Mobile}}</td>
-
-													<td>{{d.Gender}}</td>
-
-													<td>
-														{{d.Address}}
-													</td>
-                          <td>  <button type="button" ng-click="deletedoc(d)" class="btn btn-danger">Delete</button> </td>
-												</tr>
-
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-			<!-- /Page Wrapper -->
-
-        </div>
 
 		<!-- /Main Wrapper -->
-		        <script src="content/js/jquery-3.2.1.min.js"></script>
+
+		<!-- jQuery -->
+        <script src="content/js/jquery-3.2.1.min.js"></script>
 
 		<!-- Bootstrap Core JS -->
         <script src="content/js/popper.min.js"></script>
@@ -202,16 +148,14 @@
 		<!-- Slimscroll JS -->
         <script src="content/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-		<!-- Datatables JS -->
-		<script src="content/plugins/datatables/jquery.dataTables.min.js"></script>
-		<script src="content/plugins/datatables/datatables.min.js"></script>
+		<script src="content/plugins/raphael/raphael.min.js"></script>
+		<script src="content/plugins/morris/morris.min.js"></script>
+		<script src="content/js/chart.morris.js"></script>
 
 		<!-- Custom JS -->
 		<script  src="content/js/script.js"></script>
-		<!-- jQuery -->
-
 
     </body>
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/doctor-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:51 GMT -->
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:34 GMT -->
 </html>

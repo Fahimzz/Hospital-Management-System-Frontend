@@ -1,16 +1,17 @@
-app.controller("patientlist",function($scope,$http,ajax,$location){
-    ajax.get("https://localhost:44367/api/Patient/GetAll",success,error);
+app.controller("receptionistlist",function($scope,$http,ajax,$location){
+    ajax.get("https://localhost:44367/api/Receptionist/GetAll",success,error);
     debugger;
     alert(sessionStorage.getItem("Username"));
+
     function success(response){
-      $scope.patients=response.data;
+      $scope.receptionist=response.data;
     }
     function error(error){
 
     }
-    $scope.deletepatient = function(p){
-      var a= p.Username;
-       ajax.delete("https://localhost:44367/api/Patient/"+a+"/Delete",
+    $scope.deletedoc = function(d){
+      var a= d.Username;
+       ajax.delete("https://localhost:44367/api/Login/"+a+"/Delete",
        function(response){
             location.reload();
        },function(error){});

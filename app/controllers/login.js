@@ -23,7 +23,7 @@ app.controller("login",function($scope,ajax,$location){
           // setCookie(d.Username);
 
           // debugger;
-           $location.path("/doctorlist");
+           $location.path("/dashboard");
          }
          if(u.Type=="Doctor")
          {
@@ -37,7 +37,7 @@ app.controller("login",function($scope,ajax,$location){
            sessionStorage.setItem("Username",user);
            alert(sessionStorage.getItem("Username"));
            debugger;
-           $location.path("/editPatientProfile");
+           $location.path("/dashboardpatient");
          }
          if(u.Type=="Receptionist")
          {

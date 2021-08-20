@@ -50,6 +50,56 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/patientProfile.html",
         controller: 'editPatientProfile'
     })
+    .when("/dashboard", {
+        templateUrl : "views/pages/Dashboard.html",
+        controller: 'dashboard'
+
+    })
+    .when("/patientlog", {
+        templateUrl : "views/pages/patientlog.html",
+        controller: 'patientlog'
+
+    })
+    .when("/acceptedapp", {
+        templateUrl : "views/pages/acceptedapp.html",
+        controller: 'acceptedapp'
+
+    })
+    .when("/pendingapp", {
+        templateUrl : "views/pages/pendingapp.html",
+        controller: 'pendingapp'
+
+    })
+    .when("/dashboardpatient", {
+        templateUrl : "views/pages/dashboardpatient.html",
+        controller: 'dashboardpatient'
+
+    })
+    .when("/doctorlistforpatient", {
+        templateUrl : "views/pages/doctorlistforpatient.html",
+        controller: 'doctorlistforpatient'
+
+    })
+    .when("/appointmentlistforpatient", {
+        templateUrl : "views/pages/appointmentlistforpatient.html",
+        controller: 'appointmentlistforpatient'
+
+    })
+    .when("/patientregister", {
+        templateUrl : "views/pages/patientregister.html",
+        controller: 'patientregister'
+
+    })
+    .when("/receptionistlist", {
+        templateUrl : "views/pages/receptionist-list.html",
+        controller: 'receptionistlist'
+
+    })
+    .when("/receptionistregister", {
+        templateUrl : "views/pages/receptionistregister.html",
+        controller: 'receptionistregister'
+
+    })
     .otherwise({
         redirectTo:"/"
     });

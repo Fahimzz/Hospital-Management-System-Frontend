@@ -22,6 +22,14 @@ debugger;
        },function(err){});
 
     };
+    $scope.session= function()
+    {
+      debugger;
+      sessionStorage.clear();
+      debugger;
+      $location.path("/index");
+
+    }
 
 
 });

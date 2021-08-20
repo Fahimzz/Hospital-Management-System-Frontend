@@ -1,10 +1,10 @@
-app.controller("register",function($scope,ajax,$location){
+app.controller("receptionistregister",function($scope,ajax,$location){
 
   $scope.register = function(d){
-    d.Type="Doctor";
+    d.Type="Receptionist";
      ajax.post("https://localhost:44367/api/Registration/Add",d,
      function(resp){
-          $location.path("/doctorlist");
+          $location.path("/receptionistlist");
      },function(err){});
 
   };

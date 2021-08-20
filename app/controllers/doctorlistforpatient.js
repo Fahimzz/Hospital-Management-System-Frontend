@@ -1,7 +1,9 @@
-app.controller("doctorlist",function($scope,$http,ajax,$location){
+app.controller("doctorlistforpatient",function($scope,$http,ajax,$location){
     ajax.get("https://localhost:44367/api/Doctor/GetAll",success,error);
     debugger;
     alert(sessionStorage.getItem("Username"));
+    var p=sessionStorage.getItem("Username");
+    var v= null;
 
     function success(response){
       $scope.doctors=response.data;
@@ -9,10 +11,11 @@ app.controller("doctorlist",function($scope,$http,ajax,$location){
     function error(error){
 
     }
-    $scope.deletedoc = function(d){
+    $scope.request = function(d){
       var a= d.Username;
-       ajax.delete("https://localhost:44367/api/Doctor/"+a+"/Delete",
+       ajax.post("https://localhost:44367/api/Appointment/"+p+","+a+"/Request",v,
        function(response){
+         debugger;
             location.reload();
        },function(error){});
 

@@ -82,38 +82,20 @@
 								<span>Main</span>
 							</li>
 							<li>
-								<a href="#!dashboard"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+								<a href="#!dashboardpatient"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
 							<li>
-								<a href="#!appointmentlist"><i class="fe fe-layout"></i> <span>Appointments</span></a>
+								<a href="#!appointmentlistforpatient"><i class="fe fe-layout"></i> <span>Appointments</span></a>
 							</li>
-							<li>
-								<a href="#!appointmentlog"><i class="fe fe-users"></i> <span>Appointment Log</span></a>
-							</li>
+
 							<li class="active">
-								<a href="#!doctorlist"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
+								<a href="#!doctorlistforpatient"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
 							</li>
               <li>
-								<a href="#!receptionistlist"><i class="fe fe-user-plus"></i> <span>Receptionist</span></a>
+								<a href="#!editPatientProfile"><i class="fe fe-user-plus"></i> <span>Profile Edit</span></a>
 							</li>
-							<li>
-								<a href="#!patientlist"><i class="fe fe-user"></i> <span>Patients</span></a>
-							</li>
-							<li>
-								<a href="#!register"><i class="fe fe-star-o"></i> <span>Register New Doctor</span></a>
-							</li>
-              <li>
-								<a href="#!receptionistregister"><i class="fe fe-star-o"></i> <span>Register New Receptionist</span></a>
-							</li>
-							<li>
-								<a href="#!patientlog"><i class="fe fe-activity"></i> <span>Patient Log</span></a>
-							</li>
-							<li>
-								<a href="#!acceptedapp"><i class="fe fe-vector"></i> <span>Accepted Appointments</span></a>
-							</li>
-              <li>
-								<a href="#!pendingapp"><i class="fe fe-vector"></i> <span>Pending Appointments</span></a>
-							</li>
+
+
 
 						</ul>
 					</div>
@@ -132,7 +114,7 @@
 								<h3 class="page-title">List of Doctors</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-									<li class="breadcrumb-item"><a href="javascript:(0);">Users</a></li>
+									<li class="breadcrumb-item"><a href="javascript:(0);">Patient</a></li>
 									<li class="breadcrumb-item active">Doctor</li>
 								</ul>
 							</div>
@@ -175,7 +157,7 @@
 													<td>
 														{{d.Address}}
 													</td>
-                          <td>  <button type="button" ng-click="deletedoc(d)" class="btn btn-danger">Delete</button> </td>
+                          <td>  <button type="button" class="btn btn-success" ng-click="request(d)">Request</button> </td>
 												</tr>
 
 											</tbody>

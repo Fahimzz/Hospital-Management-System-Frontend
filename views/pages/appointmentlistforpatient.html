@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/doctor-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:51 GMT -->
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/appointment-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:46 GMT -->
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Doccure - Doctor List Page</title>
+        <title>Doccure - Appointment List Page</title>
 
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="content/img/favicon.png">
@@ -52,6 +52,7 @@
 
 
 
+
 				<!-- Mobile Menu Toggle -->
 
 				<!-- /Mobile Menu Toggle -->
@@ -82,39 +83,21 @@
 								<span>Main</span>
 							</li>
 							<li>
-								<a href="#!dashboard"><i class="fe fe-home"></i> <span>Dashboard</span></a>
-							</li>
-							<li>
-								<a href="#!appointmentlist"><i class="fe fe-layout"></i> <span>Appointments</span></a>
-							</li>
-							<li>
-								<a href="#!appointmentlog"><i class="fe fe-users"></i> <span>Appointment Log</span></a>
+								<a href="#!dashboardpatient"<i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
 							<li class="active">
-								<a href="#!doctorlist"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
-							</li>
-              <li>
-								<a href="#!receptionistlist"><i class="fe fe-user-plus"></i> <span>Receptionist</span></a>
-							</li>
-							<li>
-								<a href="#!patientlist"><i class="fe fe-user"></i> <span>Patients</span></a>
-							</li>
-							<li>
-								<a href="#!register"><i class="fe fe-star-o"></i> <span>Register New Doctor</span></a>
-							</li>
-              <li>
-								<a href="#!receptionistregister"><i class="fe fe-star-o"></i> <span>Register New Receptionist</span></a>
-							</li>
-							<li>
-								<a href="#!patientlog"><i class="fe fe-activity"></i> <span>Patient Log</span></a>
-							</li>
-							<li>
-								<a href="#!acceptedapp"><i class="fe fe-vector"></i> <span>Accepted Appointments</span></a>
-							</li>
-              <li>
-								<a href="#!pendingapp"><i class="fe fe-vector"></i> <span>Pending Appointments</span></a>
+								<a href="#!appointmentlistforpatient"><i class="fe fe-layout"></i> <span>Appointments</span></a>
 							</li>
 
+							<li>
+								<a href="#!doctorlistforpatient"<i class="fe fe-user-plus"></i> <span>Doctors</span></a>
+							</li>
+              <li>
+								<a href="#!editPatientProfile"><i class="fe fe-user-plus"></i> <span>Profile Edit</span></a>
+							</li>
+							
+								</ul>
+							</li>
 						</ul>
 					</div>
                 </div>
@@ -129,53 +112,40 @@
 					<div class="page-header">
 						<div class="row">
 							<div class="col-sm-12">
-								<h3 class="page-title">List of Doctors</h3>
+								<h3 class="page-title" ng-model="a">{{a}}'s All Appointments List</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-									<li class="breadcrumb-item"><a href="javascript:(0);">Users</a></li>
-									<li class="breadcrumb-item active">Doctor</li>
+									<li class="breadcrumb-item"><a href="#!dashboardpatient">Dashboard</a></li>
+									<li class="breadcrumb-item active">Appointments</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<!-- /Page Header -->
-
 					<div class="row">
-						<div class="col-sm-12">
+						<div class="col-md-12">
+
+							<!-- Recent Orders -->
 							<div class="card">
 								<div class="card-body">
 									<div class="table-responsive">
 										<table class="datatable table table-hover table-center mb-0">
 											<thead>
 												<tr>
-                          <th>User Name</th>
-													<th>Doctor Name</th>
-													<th>Age</th>
-													<th>Mobile Number</th>
-													<th>Gender</th>
-													<th>Address</th>
-                          <th></th>
+                          <th>ID</th>
+													<th>Doctor Id</th>
+													<th>Status</th>
 
 												</tr>
 											</thead>
 											<tbody>
-												<tr ng-repeat = "d in doctors">
-                          <td>
-														{{d.Username}}
-													</td>
+												<tr ng-repeat = "a in appointments">
 													<td>
-														{{d.Dname}}
+														{{a.Id}}
 													</td>
-													<td>{{d.Age}}</td>
+													<td>{{a.Doctors}}</td>
 
-													<td>{{d.Mobile}}</td>
+													<td>{{a.Status}}</td>
 
-													<td>{{d.Gender}}</td>
-
-													<td>
-														{{d.Address}}
-													</td>
-                          <td>  <button type="button" ng-click="deletedoc(d)" class="btn btn-danger">Delete</button> </td>
 												</tr>
 
 											</tbody>
@@ -183,17 +153,19 @@
 									</div>
 								</div>
 							</div>
+							<!-- /Recent Orders -->
+
 						</div>
 					</div>
-
 				</div>
 			</div>
 			<!-- /Page Wrapper -->
 
         </div>
-
 		<!-- /Main Wrapper -->
-		        <script src="content/js/jquery-3.2.1.min.js"></script>
+
+		<!-- jQuery -->
+        <script src="content/js/jquery-3.2.1.min.js"></script>
 
 		<!-- Bootstrap Core JS -->
         <script src="content/js/popper.min.js"></script>
@@ -208,10 +180,8 @@
 
 		<!-- Custom JS -->
 		<script  src="content/js/script.js"></script>
-		<!-- jQuery -->
-
 
     </body>
 
-<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/doctor-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:51 GMT -->
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/appointment-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:49 GMT -->
 </html>

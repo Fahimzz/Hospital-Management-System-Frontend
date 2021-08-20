@@ -90,10 +90,10 @@
 							<li>
 								<a href="#!appointmentlog"><i class="fe fe-users"></i> <span>Appointment Log</span></a>
 							</li>
-							<li class="active">
+							<li >
 								<a href="#!doctorlist"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
 							</li>
-              <li>
+              <li class="active">
 								<a href="#!receptionistlist"><i class="fe fe-user-plus"></i> <span>Receptionist</span></a>
 							</li>
 							<li>
@@ -149,7 +149,7 @@
 											<thead>
 												<tr>
                           <th>User Name</th>
-													<th>Doctor Name</th>
+													<th>Receptionist Name</th>
 													<th>Age</th>
 													<th>Mobile Number</th>
 													<th>Gender</th>
@@ -159,12 +159,12 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr ng-repeat = "d in doctors">
+												<tr ng-repeat = "d in receptionist">
                           <td>
 														{{d.Username}}
 													</td>
 													<td>
-														{{d.Dname}}
+														{{d.Rname}}
 													</td>
 													<td>{{d.Age}}</td>
 
