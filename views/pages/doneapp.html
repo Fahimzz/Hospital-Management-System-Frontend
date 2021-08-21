@@ -85,7 +85,7 @@
 							<li>
 								<a href="#!dashboard"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
-							<li >
+							<li>
 								<a href="#!appointmentlist"><i class="fe fe-layout"></i> <span>Appointments</span></a>
 							</li>
 							<li>
@@ -106,16 +106,16 @@
               <li>
 								<a href="#!receptionistregister"><i class="fe fe-star-o"></i> <span>Register New Receptionist</span></a>
 							</li>
-							<li class="active">
+							<li>
 								<a href="#!patientlog"><i class="fe fe-activity"></i> <span>Patient Log</span></a>
 							</li>
-							<li>
+							<li >
 								<a href="#!acceptedapp"><i class="fe fe-vector"></i> <span>Accepted Appointments</span></a>
 							</li>
               <li>
 								<a href="#!pendingapp"><i class="fe fe-vector"></i> <span>Pending Appointments</span></a>
 							</li>
-              <li>
+              <li class="active">
 								<a href="#!doneapp"><i class="fe fe-vector"></i> <span>Done Appointments</span></a>
 							</li>
 
@@ -153,22 +153,22 @@
 											<thead>
 												<tr>
                           <th>ID</th>
-													<th>Patient Username</th>
-													<th>Timer</th>
-													<th>Operation</th>
+													<th>Doctor Name</th>
+													<th>Patient Name</th>
+													<th>Status</th>
 
 												</tr>
 											</thead>
 											<tbody>
-												<tr ng-repeat = "a in patientlog">
+												<tr ng-repeat = "a in appointments">
 													<td>
 														{{a.Id}}
 													</td>
-													<td>{{a.PatientId}}</td>
+													<td>{{a.Doctors}}</td>
 													<td>
-														{{a.Time}}
+														{{a.Patients}}
 													</td>
-													<td>{{a.Operation}}</td>
+													<td>{{a.Status}}</td>
 
 												</tr>
 

@@ -100,6 +100,51 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         controller: 'receptionistregister'
 
     })
+    .when("/receptionistdashboard", {
+        templateUrl : "views/pages/receptionistdashboard.html",
+        controller: 'receptionistdashboard'
+
+    })
+    .when("/receppendingapp", {
+        templateUrl : "views/pages/receppendingapp.html",
+        controller: 'receppendingapp'
+
+    })
+    .when("/recepacceptedapp", {
+        templateUrl : "views/pages/recepacceptedapp.html",
+        controller: 'recepacceptedapp'
+
+    })
+    .when("/recepProfile", {
+        templateUrl : "views/pages/recepProfile.html",
+        controller: 'recepProfile'
+
+    })
+    .when("/doctordashboard", {
+        templateUrl : "views/pages/doctordashboard.html",
+        controller: 'doctordashboard'
+
+    })
+    .when("/doctorapp", {
+        templateUrl : "views/pages/doctorapp.html",
+        controller: 'doctorapp'
+
+    })
+    .when("/doctorapphistory", {
+        templateUrl : "views/pages/doctorapphistory.html",
+        controller: 'doctorapphistory'
+
+    })
+    .when("/doctorProfile", {
+        templateUrl : "views/pages/doctorProfile.html",
+        controller: 'doctorProfile'
+
+    })
+    .when("/doneapp", {
+        templateUrl : "views/pages/doneapp.html",
+        controller: 'doneapp'
+
+    })
     .otherwise({
         redirectTo:"/"
     });

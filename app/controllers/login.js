@@ -4,9 +4,14 @@ app.controller("login",function($scope,ajax,$location){
 
      ajax.get("https://localhost:44367/api/Login/"+d.Username,
      function(resp){
+       $scope.error="";
        var u= resp.data;
-        var user = u.Username;
-        var username;
+       if(u==null){
+
+           $scope.error="Invalid User";
+
+       }
+
 
       /*  function setCookie(username) {
         debugger;
@@ -14,7 +19,11 @@ app.controller("login",function($scope,ajax,$location){
     alert(document.cookie);
   }*/
 
-       if(u.Username == d.Username && u.Password == d.Password){
+       else if(u.Username == d.Username && u.Password == d.Password){
+         debugger;
+          var user = u.Username;
+          debugger;
+          var username;
          if(u.Type=="Admin")
          {
            sessionStorage.setItem("Username",user);
@@ -30,7 +39,7 @@ app.controller("login",function($scope,ajax,$location){
            sessionStorage.setItem("Username",user);
            alert(sessionStorage.getItem("Username"));
            debugger;
-           $location.path("/patientlist");
+           $location.path("/doctordashboard");
          }
          if(u.Type=="Patient")
          {
@@ -41,8 +50,15 @@ app.controller("login",function($scope,ajax,$location){
          }
          if(u.Type=="Receptionist")
          {
-           $location.path("/doctorlist");
+           sessionStorage.setItem("Username",user);
+           alert(sessionStorage.getItem("Username"));
+           debugger;
+           $location.path("/receptionistdashboard");
          }
+       }
+
+       else {
+         $scope.error="Invalid Password"
        }
 
      },function(err){});

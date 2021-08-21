@@ -42,14 +42,16 @@
 								<!-- Form -->
 								<form >
 									<div class="form-group">
-										<input class="form-control" ng-model="d.Username" type="text" placeholder="Username">
+										<input class="form-control" ng-model="d.Username" type="text" placeholder="Username" required >
 									</div>
 									<div class="form-group">
-										<input class="form-control" ng-model="d.Password"type="text" placeholder="Password">
+										<input class="form-control" ng-model="d.Password"type="Password" placeholder="Password" required >
 									</div>
 									<div class="form-group">
 										<button class="btn btn-primary btn-block" ng-click="login(d)" type="submit">Login</button>
+                    <p ng-model="error" class="account-sibtitle"  style="text-align: center; color:red;" >{{error}}</p>
 									</div>
+
 								</form>
 								<!-- /Form -->
 

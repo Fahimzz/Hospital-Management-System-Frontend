@@ -82,42 +82,18 @@
 							<li class="menu-title">
 								<span>Main</span>
 							</li>
-							<li>
-								<a href="#!dashboard"><i class="fe fe-home"></i> <span>Dashboard</span></a>
-							</li>
-							<li >
-								<a href="#!appointmentlist"><i class="fe fe-layout"></i> <span>Appointments</span></a>
-							</li>
-							<li>
-								<a href="#!appointmentlog"><i class="fe fe-users"></i> <span>Appointment Log</span></a>
-							</li>
-							<li>
-								<a href="#!doctorlist"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
-							</li>
+              <li >
+                <a href="#!doctordashboard"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+              </li>
+              <li class="active">
+                <a href="#!doctorapp"><i class="fe fe-layout"></i> <span>Appointments</span></a>
+              </li>
               <li>
-								<a href="#!receptionistlist"><i class="fe fe-user-plus"></i> <span>Receptionist</span></a>
-							</li>
-							<li>
-								<a href="#!patientlist"><i class="fe fe-user"></i> <span>Patients</span></a>
-							</li>
-							<li>
-								<a href="#!register"><i class="fe fe-star-o"></i> <span>Register New Doctor</span></a>
-							</li>
+                <a href="#!doctorapphistory"><i class="fe fe-user-plus"></i> <span>Appointment History</span></a>
+              </li>
               <li>
-								<a href="#!receptionistregister"><i class="fe fe-star-o"></i> <span>Register New Receptionist</span></a>
-							</li>
-							<li class="active">
-								<a href="#!patientlog"><i class="fe fe-activity"></i> <span>Patient Log</span></a>
-							</li>
-							<li>
-								<a href="#!acceptedapp"><i class="fe fe-vector"></i> <span>Accepted Appointments</span></a>
-							</li>
-              <li>
-								<a href="#!pendingapp"><i class="fe fe-vector"></i> <span>Pending Appointments</span></a>
-							</li>
-              <li>
-								<a href="#!doneapp"><i class="fe fe-vector"></i> <span>Done Appointments</span></a>
-							</li>
+                <a href="#!doctorProfile"><i class="fe fe-user-plus"></i> <span>Profile Edit</span></a>
+              </li>
 
 						</ul>
 					</div>
@@ -153,23 +129,24 @@
 											<thead>
 												<tr>
                           <th>ID</th>
-													<th>Patient Username</th>
-													<th>Timer</th>
-													<th>Operation</th>
+
+													<th>Patient Name</th>
+													<th>Status</th>
+                          <th></th>
 
 												</tr>
 											</thead>
 											<tbody>
-												<tr ng-repeat = "a in patientlog">
+												<tr ng-repeat = "a in appointments">
 													<td>
 														{{a.Id}}
 													</td>
-													<td>{{a.PatientId}}</td>
-													<td>
-														{{a.Time}}
-													</td>
-													<td>{{a.Operation}}</td>
 
+													<td>
+														{{a.Patients}}
+													</td>
+													<td>{{a.Status}}</td>
+                            <td><button type="button" class="btn btn-success" ng-click="done(a)">Done</button> </td>
 												</tr>
 
 											</tbody>
